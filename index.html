@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cute GIF Display</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #ffeef8; /* soft pastel pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff69b4;
+  }
+  .gif-container {
+    background: #fff0f6; /* very light pastel pink */
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3);
+    text-align: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 3px solid #ffb6c1; /* pastel pink border */
+    position: relative;
+    overflow: hidden;
+  }
+  .gif-container img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+  }
+  .gif-container img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.7);
+  }
+  .caption {
+    margin-top: 14px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d6336c;
+    text-shadow: 0 2px 6px rgba(255, 182, 193, 0.8);
+    user-select: none;
+  }
+  button.cute-button:hover {
+    background-color: #ff69b4;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.8);
+    transform: scale(1.1);
+  }
+  .hearts {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+  }
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    transform: rotate(-45deg);
+    border-radius: 10px 10px 0 0;
+    animation: floatUp 4s infinite ease-in-out;
+    opacity: 0.8;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    right: -10px;
+  }
+  .heart:nth-child(1){
+    left: 0;
+    animation-delay: 0s;
+  }
+  .heart:nth-child(2){
+    left: 40px;
+    animation-delay: 1.2s;
+  }
+  .heart:nth-child(3){
+    left: 70px;
+    animation-delay: 2.6s;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-80px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="gif-container">
+    <img src="bear cute.gif" alt="Cute GIF" />
+    <div class="caption">Ouy! cute ha neak  💖</div>
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+  </div>
+</body>
+</html>
